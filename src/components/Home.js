@@ -8,7 +8,7 @@ function Home() {
 
   return (
     <div className="container my-5">
-        This is home
+        This is home from vatsal
     </div>
   )
 }
