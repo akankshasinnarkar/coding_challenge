@@ -1,0 +1,45 @@
+import React from 'react';
+import TradeItem from './TradeItem';
+import { Link } from 'react-router-dom';
+
+const TradeList = ({ trades }) => {
+    const groupedTrades = {};
+
+    for (const key in trades) {
+        const trade = trades[key];
+        const settlementDate = new Date(trade.settlementDate);
+        const curDate = new Date();
+        const category = settlementDate < curDate ? (trade.issue != "NA" ? "Issues" : "Post Maturity") : "Other";
+
+        if (!groupedTrades[category]) {
+            groupedTrades[category] = [];
+        }
+
+        groupedTrades[category].push(trade);
+    }
+
+    return (
+        <div>
+            {Object.keys(groupedTrades).map(category => (
+                <div key={category}>
+                    <div className="badge bg-danger text-dark mx-5">
+                        {category}
+                    </div>
+                    <div className='border border-3 rounded p-2'>
+                    {groupedTrades[category].map(trade => (
+                        <Link key={trade.id} to={{
+                            pathname: `/tradeDetail`,
+                            state: { id: trade.id }
+                        }}>
+                            <TradeItem trade={trade} />
+                            {/* <TradeList trades={trade} /> */}
+                        </Link>
+                        // <TradeItem key={trade.id} trade={trade} />
+                    ))}</div> <br/>
+                </div>
+            ))}
+        </div>
+    );
+};
+
+export default TradeList;

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import TradeDetail from './TradeDetail';
 import { Link, useNavigate } from "react-router-dom";
 import TradeItem from './TradeItem';
+import TradeList from './TradeList';
 
 const Trades = (props) => {
   const trades =  {
@@ -69,7 +70,7 @@ const Trades = (props) => {
       <div className="container">
         <h2>All Trades</h2>
         <div className="row">
-          {trades.length === 0 ? (
+          {/* {trades.length === 0 ? (
             <div><p>No Trades Found</p></div>
           ) : (
             Object.values(trades).map(trade => (
@@ -79,9 +80,15 @@ const Trades = (props) => {
                   state: { id: trade.id }
                 }}>
                   <TradeItem trade={trade} />
-                </Link>
+                  {/* <TradeList trades={trade} /> */}
+                {/* </Link>
               </div>
             ))
+          )} */}
+          {trades.length === 0 ? (
+            <div><p>No Trades Found</p></div>
+          ) : (
+            <TradeList trades={trades} />
           )}
         </div>
       </div>
