@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Portfolio from './components/Portfolio';
 import Trades from './components/Trades';
 import Securities from './components/Securities';
+import Tradeedit from './components/Tradeedit/Tradeedit';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
       </BrowserRouter>
     </>
     </>
+    // <Tradeedit />
   );
 }
 
