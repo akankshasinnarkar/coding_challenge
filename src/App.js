@@ -4,7 +4,6 @@ import Alert from './components/Alert';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
-import Portfolio from './components/Portfolio';
 import Trades from './components/Trades';
 import Securities from './components/Securities';
 
@@ -33,7 +32,6 @@ function App() {
             <Route  path="/" element={<Home showAlert={showAlert}/>}></Route>
             <Route exact path="/login" element={<Login showAlert={showAlert}/>}></Route>
             <Route exact path="/dashboard" element={<Securities showAlert={showAlert}/>}></Route>
-            <Route exact path="/portfolio" element={<Portfolio showAlert={showAlert}/>}></Route>
             <Route exact path="/trades" element={<Trades showAlert={showAlert}/>}></Route>
 
           </Routes>
