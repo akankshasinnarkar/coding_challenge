@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Portfolio from './components/Portfolio';
 import Trades from './components/Trades';
 import Securities from './components/Securities';
+import SecurityDetail from './components/SecurityDetail';
 
 function App() {
 
@@ -35,7 +36,7 @@ function App() {
             <Route exact path="/dashboard" element={<Securities showAlert={showAlert}/>}></Route>
             <Route exact path="/portfolio" element={<Portfolio showAlert={showAlert}/>}></Route>
             <Route exact path="/trades" element={<Trades showAlert={showAlert}/>}></Route>
-
+            <Route exact path="/securityDetails" element={<SecurityDetail/>} />
           </Routes>
         </div>
       </BrowserRouter>
