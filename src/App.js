@@ -8,6 +8,8 @@ import Portfolio from './components/Portfolio';
 import Trades from './components/Trades';
 import Securities from './components/Securities';
 import SecurityDetail from './components/SecurityDetail';
+import TradeDetail from './components/TradeDetail';
+import Tradeedit from './components/Tradeedit';
 
 function App() {
 
@@ -37,6 +39,8 @@ function App() {
             <Route exact path="/portfolio" element={<Portfolio showAlert={showAlert}/>}></Route>
             <Route exact path="/trades" element={<Trades showAlert={showAlert}/>}></Route>
             <Route exact path="/securityDetails" element={<SecurityDetail/>} />
+            <Route exact path="/tradeDetail" element={<TradeDetail/>} />
+            <Route exact path="/modify-trade/:id" element={<Tradeedit/>} />
           </Routes>
         </div>
       </BrowserRouter>
