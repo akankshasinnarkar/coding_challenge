@@ -31,7 +31,7 @@ export const Navbar = () => {
                 <Link className={`nav-link ${location.pathname==="/about"?"active":""}`} to="/about">About</Link>
                 </li>
             </ul>
-            {!localStorage.getItem('token')
+            {/* {!localStorage.getItem('token')
             ? <form className="d-flex" role="search">
                 <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
             </form>
@@ -40,7 +40,7 @@ export const Navbar = () => {
             <span className="badge bg-dark">{localStorage.getItem('PMTusername')}</span>
             <button onClick={handleLogout} className="btn btn-primary mx-1">Logout</button>   
             </>
-            }  
+            }   */}
             </div>
         </div>
         </nav>

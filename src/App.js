@@ -1,15 +1,14 @@
 import {useState} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Alert from './components/Alert';
-import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
-import Portfolio from './components/Portfolio';
 import Trades from './components/Trades';
 import Securities from './components/Securities';
 import SecurityDetail from './components/SecurityDetail';
 import TradeDetail from './components/TradeDetail';
 import Tradeedit from './components/Tradeedit';
+import About from './components/About';
 
 function App() {
 
@@ -33,14 +32,14 @@ function App() {
         
         <div className="container my-5">
           <Routes>
-            <Route  path="/" element={<Home showAlert={showAlert}/>}></Route>
+            <Route  path="/" element={<Login showAlert={showAlert}/>}></Route>
             <Route exact path="/login" element={<Login showAlert={showAlert}/>}></Route>
             <Route exact path="/dashboard" element={<Securities showAlert={showAlert}/>}></Route>
-            <Route exact path="/portfolio" element={<Portfolio showAlert={showAlert}/>}></Route>
             <Route exact path="/trades" element={<Trades showAlert={showAlert}/>}></Route>
             <Route exact path="/securityDetails" element={<SecurityDetail/>} />
             <Route exact path="/tradeDetail" element={<TradeDetail/>} />
             <Route exact path="/modify-trade/:id" element={<Tradeedit/>} />
+            <Route exact path="/about" element={<About/>} />
           </Routes>
         </div>
       </BrowserRouter>

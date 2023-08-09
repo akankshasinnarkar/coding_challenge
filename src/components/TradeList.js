@@ -4,12 +4,16 @@ import { Link } from 'react-router-dom';
 
 const TradeList = ({ trades }) => {
     const groupedTrades = {};
+    var bgColor = "";
 
     for (const key in trades) {
         const trade = trades[key];
         const settlementDate = new Date(trade.settlementDate);
         const curDate = new Date();
         const category = settlementDate < curDate ? (trade.issue != "NA" ? "Issues" : "Post Maturity") : "Other";
+        // bgColor = category !== "Other" ? ( category == "Issues" ? "bg-primary" : "bg-danger"): "bg-success"; 
+
+        // console.log(bgColor)
 
         if (!groupedTrades[category]) {
             groupedTrades[category] = [];
@@ -22,7 +26,7 @@ const TradeList = ({ trades }) => {
         <div>
             {Object.keys(groupedTrades).map(category => (
                 <div key={category}>
-                    <div className="badge bg-danger text-dark mx-5">
+                    <div className={`badge text-dark mx-5 ${category !== "Other" ? ( category == "Issues" ? "bg-primary" : "bg-danger"): "bg-success"}`}>
                         {category}
                     </div>
                     <div className='border border-3 rounded p-2'>
